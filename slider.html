@@ -1,0 +1,91 @@
+J<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slid1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="boxSlider">
+            <div class="boxconter">
+                <span class="conter">1</span>/<span>5</span>
+            </div>
+            <div class="slider">
+                <div class="after" onclick="chenging('mosbat')">❯</div>
+                <img src="./img/1.jpg" alt="">
+                <div class="before" onclick="chenging('manfi')">❮</div>
+            </div>
+            <div class="Caption">Caption Text</div>
+            <div class="boxbutton">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var src = [
+            ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"],
+            ["Caption Text", "Caption Two", "Caption Three", "Caption Four", "Caption five"]
+        ]
+        var button = document.querySelectorAll(".boxbutton button");
+        var x = 0;
+
+
+        function update() {
+            var bigimg = document.querySelector(".slider img");
+            var Caption = document.querySelector(".Caption");
+
+            bigimg.src = src[0][x]
+            Caption.innerHTML = src[1][x]
+            document.querySelector(".conter").innerHTML = x + 1;
+            if(button[x]){
+                button.forEach(b => b.classList.remove("btn"))
+                button[x].classList.add("btn")
+            }
+        }
+
+        function chenging(type) {
+            if (type === 'mosbat') {
+                x++
+                if (x >= src[0].length) {
+                    x = 0
+                }
+            } else if (type === 'manfi') {
+                x = x - 1
+                if (x <= -1) {
+                    x = src[0].length - 1;
+                }
+            }
+            update()
+        }
+
+        button.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                x = index;
+                button.forEach(b => b.classList.remove("btn"))
+                btn.classList.add("btn")
+                
+                update()
+            });
+            
+        });
+
+        setInterval(() => {
+            chenging('mosbat')
+        }, 5000);
+
+
+        update()
+    </script>
+</body>
+
+</html>

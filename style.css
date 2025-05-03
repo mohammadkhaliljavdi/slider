@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    margin: 10px auto;
+
+}
+
+.slider {
+    width: 100%;
+    height: 70vh;
+    box-shadow: inset 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.slider .before {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    left: 0px;
+    cursor: pointer;
+    height: 40px;
+    /* border: 1px solid red; */
+    padding: 40px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms;
+    font-weight:bolder;
+}
+
+.slider .after {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    right: 0px;
+    cursor: pointer;
+    height: 40px;
+    /* border: 1px solid red; */
+    padding: 40px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms;
+    font-weight: bolder;
+}
+
+.slider .before:hover,
+.slider .after:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+}
+
+.Caption {
+    width: 100%;
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 1.5rem;
+    margin-top: -38px;
+    position: relative;
+}
+
+.boxconter {
+    font-size: 1.5rem;
+    top: 40px;
+    position: relative;
+    z-index: 1;
+    left: 20px;
+    color: white;
+}
+
+
+/* دکمه ها---------------------------------------------------------> */
+.boxbutton{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.boxbutton button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+.boxbutton button:hover{
+    background-color: #ccc;
+}
+
+.btn{
+    background-color: #ccc;
+}
