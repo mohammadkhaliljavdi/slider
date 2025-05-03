@@ -15,5 +15,5 @@
 برای شروع، کافی است مراحل زیر را دنبال کنید:  
 
 `bash
-git clone https://github.com/yourusername/image-slider.git
+git clone https://github.com/mohammadkhaliljavdi/slyder.git
 cd image-slider
